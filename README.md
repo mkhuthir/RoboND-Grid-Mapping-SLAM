@@ -72,6 +72,8 @@ With the map_server you can load and save maps. Running map_server will generate
 
 <p align="center"> <img src="./misc/map_pgm.jpg"> </p>
 map.pgm of the Willow Garage environment
+
+
 <p align="center"> <img src="./misc/map_yaml.png"> </p>
 map.yaml of the Willow Garage environment
 
