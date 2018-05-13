@@ -70,26 +70,27 @@ $ rosrun map_server map_saver -f myMap
 
 With the map_server you can load and save maps. Running map_server will generate the map.pgm and the map.yaml files:
 
-
 map.pgm of the Willow Garage environment
 
-1- map.pgm: Picture of the map in occupancy grid representation
+### 1- map.pgm: Picture of the map in occupancy grid representation
 
-White pixels: Free cells
-Black pixels: Occupied cells
-Gray pixels: Unknown state
+* White pixels: Free cells
+* Black pixels: Occupied cells
+* Gray pixels: Unknown state
 
 map.yaml of the Willow Garage environment
 
-2- map.yaml: The map metadata
+### 2- map.yaml: The map metadata
 
-image: Map name
-resolution: Resolution of the map (meters/pixel)
-origin: Pose of the lower-left pixel in the map (x, y, Θ)
-Occupied_thresh: Cell is considered occupied if its probability is greater than this threshold.
-free_thresh: Cell is considered unoccupied or free if its probability is less than this threshold.
-negate: This value will check whether the notation of black colored cell=occupied and white colored cell = free should be preserved
-Wondering why you got a bad quality map?
+* image: Map name
+* resolution: Resolution of the map (meters/pixel)
+* origin: Pose of the lower-left pixel in the map (x, y, Θ)
+* Occupied_thresh: Cell is considered occupied if its probability is greater than this threshold.
+* free_thresh: Cell is considered unoccupied or free if its probability is less than this threshold.
+* negate: This value will check whether the notation of black colored cell=occupied and white colored cell = free should be preserved
+
+### Wondering why you got a bad quality map?
+
 That’s because the gmapping parameters values used were the default values. In general, it’s essential to tune them in order to get a 100% accurate map. These parameters are all listed under the gmapping documentation, where you can look at them yourself. If you experiment with some of these parameter values, you should be able to get better maps.
 
 For example, you might try, reducing the angularUpdate and linearUpdate values so the map gets updated for smaller ranges of movements, reducing the x and y limits, which represent the initial map size, increasing the number of particles. You can try tweaking these parameters and/or any other parameter you think should be changed.
